@@ -42,8 +42,14 @@ struct ContentView: View {
                     cpuCard = "card" + String(cpuRand)
                     
                     //update the score
-                    // playerScore += 1
-                    //  cpuScore += 1
+                    if playerRand > cpuRand {
+                        playerScore += 1
+                    }
+                    
+                    else if cpuRand > playerRand {
+                        cpuScore += 1
+                    }
+             
                     
                 }, label: {
                     Image("dealbutton")})
@@ -62,11 +68,11 @@ struct ContentView: View {
                     }
                     Spacer()
                     VStack{
-                        Text(String(cpuScore))
+                        Text("CPU")
                             .font(.headline)
                             .foregroundColor(Color.white)
                             .padding(.bottom, 2.0)
-                        Text("0")
+                        Text(String(cpuScore))
                             .font(.subheadline)
                             .foregroundColor(Color.white)
                     }
